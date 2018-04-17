@@ -9,17 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var count = 0
+    @IBOutlet weak var lblCount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func btTap(_ sender: Any) {
+        count = count + 1
+        lblCount.text = "\(count)"
     }
-
-
+    @IBAction func btReset(_ sender: Any) {
+        count = 0
+        lblCount.text = String(count)
+        view.backgroundColor = UIColor.white
+    }
+    @IBAction func btColor(_ sender: Any) {
+        view.backgroundColor = UIColor.brown
+    }
 }
 
